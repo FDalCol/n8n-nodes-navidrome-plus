@@ -1,0 +1,67 @@
+{
+	"name": "n8n-nodes-navidrome-plus",
+	"version": "0.3.0",
+	"description": "Extended n8n community node for Navidrome: Subsonic API (browsing, lists, playlists, favorites, radio, scans) and native API user management",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"navidrome",
+		"subsonic",
+		"opensubsonic",
+		"music"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/FDalCol/n8n-nodes-navidrome-plus#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FDalCol/n8n-nodes-navidrome-plus.git"
+	},
+	"bugs": {
+		"url": "https://github.com/FDalCol/n8n-nodes-navidrome-plus/issues"
+	},
+	"author": {
+		"name": "FDalCol",
+		"email": "353270041+FDalCol@users.noreply.github.com"
+	},
+	"contributors": [
+		"Alan Carrer (Izakun) <carrer.a@outlook.fr> (https://github.com/Izakun/n8n-nodes-navidrome)"
+	],
+	"main": "index.js",
+	"engines": {
+		"node": ">=18.10"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"test": "vitest run",
+		"prepublishOnly": "n8n-node prerelease",
+		"format": "prettier nodes credentials --write"
+	},
+	"files": [
+		"dist",
+		"index.js"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/NavidromePlusApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Navidrome/Navidrome.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "^0.55.5",
+		"eslint": "9.39.4",
+		"prettier": "3.8.3",
+		"typescript": "5.9.3",
+		"vitest": "^5.1.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

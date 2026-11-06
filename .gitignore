@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output and packages
+dist/
+*.tgz
+*.tsbuildinfo
+
+# Logs, caches and tooling
+npm-debug.log*
+*.log
+.npm/
+.eslintcache
+.cache/
+coverage/
+
+# Local and personal files
+.env
+.env.*
+.vscode/
+.idea/
+*.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
