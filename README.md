@@ -123,6 +123,11 @@ npm test
 npm pack
 ```
 
+## Support
+
+If this node is useful to you, you can support its development on
+[Buy Me a Coffee](https://buymeacoffee.com/fdalcol).
+
 ## License
 
 [MIT](./LICENSE)

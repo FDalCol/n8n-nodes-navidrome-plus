@@ -19,6 +19,10 @@
 	"bugs": {
 		"url": "https://github.com/FDalCol/n8n-nodes-navidrome-plus/issues"
 	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://buymeacoffee.com/fdalcol"
+	},
 	"author": {
 		"name": "FDalCol",
 		"email": "353270041+FDalCol@users.noreply.github.com"
