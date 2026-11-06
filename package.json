@@ -37,7 +37,7 @@
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"test": "vitest run",
-		"prepublishOnly": "n8n-node prerelease",
+		"prepublishOnly": "npm run build && npm run lint && npm test",
 		"format": "prettier nodes credentials --write"
 	},
 	"files": [
