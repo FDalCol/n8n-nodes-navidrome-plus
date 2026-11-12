@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-navidrome-plus",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Extended n8n community node for Navidrome: Subsonic API (browsing, lists, playlists, favorites, radio, scans) and native API user management",
 	"keywords": [
 		"n8n-community-node-package",

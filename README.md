@@ -2,11 +2,39 @@
 
 # n8n-nodes-navidrome-plus
 
+[![npm version](https://img.shields.io/npm/v/n8n-nodes-navidrome-plus.svg)](https://www.npmjs.com/package/n8n-nodes-navidrome-plus)
+[![npm downloads](https://img.shields.io/npm/dm/n8n-nodes-navidrome-plus.svg)](https://www.npmjs.com/package/n8n-nodes-navidrome-plus)
+[![license](https://img.shields.io/npm/l/n8n-nodes-navidrome-plus.svg)](./LICENSE)
+
 n8n community node for [Navidrome](https://www.navidrome.org). It covers the Subsonic API
 endpoints that Navidrome implements, library scans, and user management through Navidrome's
 native API.
 
 Tested with n8n 2.45 and Navidrome 0.64.2.
+
+## Differences from n8n-nodes-navidrome
+
+Compared with `n8n-nodes-navidrome` 0.1.2, this package offers:
+
+- 50 operations in 12 resources, instead of 5 operations (Ping, Search, Get Album List,
+  Get Artists, Get Starred).
+- Get Album List with every list type (newest, random, by year, by genre, …), size and offset;
+  the original always returns recently played albums.
+- Playlists, favorites and ratings, scrobbling, lyrics, bookmarks and play queue, internet
+  radio, library scans with Wait For Completion, Get Now Playing with a minutes filter, and a
+  Custom Endpoint operation.
+- User management (get, list, create, update, change password, delete) through Navidrome's
+  native API.
+- A credential test with token authentication; the original sends the password in clear text
+  in the query string (`p=`).
+- `status: "failed"` responses turned into node errors with Navidrome's code and message; the
+  original returns them as regular output.
+- Payload without the Subsonic envelope, lists always returned as arrays, and a Split Into
+  Items option.
+- Redirects not followed, a 30-second request timeout, credentials removed from error messages,
+  and Custom Endpoint calls restricted to the Base URL.
+- A separate credential type (`navidromePlusApi`), so both packages can be installed side by
+  side.
 
 ## Installation
 
@@ -17,8 +45,8 @@ Tested with n8n 2.45 and Navidrome 0.64.2.
 restart n8n. Replace `n8n` with your container name.
 
 ```bash
-docker cp n8n-nodes-navidrome-plus-0.3.0.tgz n8n:/tmp/
-docker exec -it n8n sh -c "mkdir -p ~/.n8n/nodes && cd ~/.n8n/nodes && npm install --legacy-peer-deps /tmp/n8n-nodes-navidrome-plus-0.3.0.tgz"
+docker cp n8n-nodes-navidrome-plus-0.3.1.tgz n8n:/tmp/
+docker exec -it n8n sh -c "mkdir -p ~/.n8n/nodes && cd ~/.n8n/nodes && npm install --legacy-peer-deps /tmp/n8n-nodes-navidrome-plus-0.3.1.tgz"
 docker restart n8n
 ```
 
